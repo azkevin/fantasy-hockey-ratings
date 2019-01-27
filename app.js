@@ -26,10 +26,23 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// server images, css files and js files in directory named public
+// serve images, css files and js files in directory named public
 app.use(express.static('public'))
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// using statsapi-nhl
+const nhl = require('statsapi-nhl')
+var lightning = nhl.Teams.getID("Tampa Bay Lightning")
+
+nhl.Teams.getRoster(lightning, "20182019").then((res) => {
+  var centers = res.filter((curr) => {
+    return curr.position.name === "Center";
+  })
+  console.log(centers[0]);
+}).catch((err) => {
+  console.log(err)
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

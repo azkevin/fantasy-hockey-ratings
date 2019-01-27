@@ -1,5 +1,5 @@
 {
-  "name": "myapp",
+  "name": "fantasy-hockey-ratings",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,11 +7,17 @@
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
+    "datatables": "^1.10.18",
+    "datatables.net": "^1.10.19",
+    "datatables.net-buttons": "^1.5.4",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
+    "jquery": "^3.3.1",
+    "jsdom": "^13.2.0",
     "morgan": "~1.9.0",
-    "node-sass-middleware": "0.11.0"
+    "node-sass-middleware": "0.11.0",
+    "statsapi-nhl": "^1.0.3"
   }
 }
